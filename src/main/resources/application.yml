@@ -1,0 +1,20 @@
+spring:
+  config:
+    import: crypto-currency.yml,log4j2.yml
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/crypto-currency
+    username: postgres
+    password: postgres
+fixedDelay:
+  in:
+    milliseconds: 60000
+
