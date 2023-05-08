@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 @RequiredArgsConstructor
-public class UpdateCurrencyController {
+public class CryptoCurrencyInformationController {
     private final CryptoCurrencyService cryptoCurrencyService;
     private final CryptoCurrencyMapper cryptoCurrencyMapper;
     private final ControllingPrice controllingPrice;

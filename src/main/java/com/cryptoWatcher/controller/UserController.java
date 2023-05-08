@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity registration(@RequestBody UserDTO userDTO) {
-        if (Arrays.stream(cryptoCurrencyConfiguration.getSymbols()).anyMatch(s -> s == userDTO.getSymbol())) {
+        if (Arrays.stream(cryptoCurrencyConfiguration.getSymbols()).anyMatch(s -> s.equals(userDTO.getSymbol()))) {
             User user = userMapper.convertToUser(userDTO);
             userService.save(user);
             return ResponseEntity.ok().body(null);

@@ -37,7 +37,7 @@ public class CryptoCurrencyController {
 
     @GetMapping(path = "/{symbol}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CryptoDTO> getBySymbol(@PathVariable String symbol) {
-        if (Arrays.stream(cryptoCurrencyConfiguration.getSymbols()).anyMatch(s -> s == symbol)) {
+        if (Arrays.stream(cryptoCurrencyConfiguration.getSymbols()).anyMatch(s -> s.equals(symbol))) {
             return ResponseEntity.ok(cryptoCurrencyMapper.convertToDTO(cryptoCurrencyService.findBySymbol(symbol)));
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

@@ -14,7 +14,6 @@ import java.util.List;
 public class CryptoCurrencyService {
     private final CryptoCurrencyConfiguration cryptoCurrencyConfiguration;
     private final CryptoCurrencyRepository cryptoCurrencyRepository;
-    //private final String[] SYMBOLS_OF_ACCESSIBLE_CURRENCIES = {"BTC", "ETH", "SOL"};
 
     public void save(CryptoCurrency currency) {
         cryptoCurrencyRepository.save(currency);
